@@ -12,4 +12,6 @@ Not done yet
 
 ## How to run
 
-Not done yet
+### Set local variables
+:us: First of all you need to set local variables for the project to run. You can follow the steps in our wiki [Setting Local Variables](https://github.com/filipecancio/marvel-characters/wiki/Setting-Local-Variables).
+:br: Primeiramente você precisa definir as variáveis locais para o projeto rodar. Você pode seguir os passos em nossa wiki [Definindo Variáveis Locais](https://github.com/filipecancio/marvel-characters/wiki/Setting-Local-Variables).
