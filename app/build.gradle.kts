@@ -1,6 +1,15 @@
+import java.io.FileInputStream
+import java.util.Properties
+
+val localPropertiesFile = rootProject.file("local.properties")
+val localProperties = Properties()
+localProperties.load(FileInputStream(localPropertiesFile))
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+    alias(libs.plugins.dagger.hilt)
 }
 
 android {
@@ -27,6 +36,14 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String","MARVEL_BASE_URL", "")
+            buildConfigField("String","MARVEL_API_KEY", "")
+            buildConfigField("String","MARVEL_PRIVATE_KEY", "")
+        }
+        debug {
+            buildConfigField("String","MARVEL_BASE_URL", localProperties["MARVEL_BASE_URL"].toString())
+            buildConfigField("String","MARVEL_API_KEY", localProperties["MARVEL_API_KEY"].toString())
+            buildConfigField("String","MARVEL_PRIVATE_KEY", localProperties["MARVEL_PRIVATE_KEY"].toString())
         }
     }
     compileOptions {
@@ -37,6 +54,7 @@ android {
         jvmTarget = "1.8"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
     composeOptions {
@@ -50,6 +68,15 @@ android {
 }
 
 dependencies {
+
+    //Dagger Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+
+    //Retrofit and OkHttp
+    implementation(libs.retrofit.retrofit)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp3)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
