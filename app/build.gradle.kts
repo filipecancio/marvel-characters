@@ -37,9 +37,13 @@ android {
                 "proguard-rules.pro"
             )
             buildConfigField("String","MARVEL_BASE_URL", "")
+            buildConfigField("String","MARVEL_API_KEY", "")
+            buildConfigField("String","MARVEL_PRIVATE_KEY", "")
         }
         debug {
             buildConfigField("String","MARVEL_BASE_URL", localProperties["MARVEL_BASE_URL"].toString())
+            buildConfigField("String","MARVEL_API_KEY", localProperties["MARVEL_API_KEY"].toString())
+            buildConfigField("String","MARVEL_PRIVATE_KEY", localProperties["MARVEL_PRIVATE_KEY"].toString())
         }
     }
     compileOptions {

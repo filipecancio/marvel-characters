@@ -1,6 +1,7 @@
 package dev.cancio.marvel_characters
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -11,14 +12,23 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import dagger.hilt.android.AndroidEntryPoint
+import dev.cancio.marvel_characters.repository.MarvelRepository
 import dev.cancio.marvel_characters.ui.theme.MarvelcharactersTheme
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    @Inject
+    lateinit var repository: MarvelRepository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        collectFlow()
         setContent {
             MarvelcharactersTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
@@ -27,6 +37,14 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
+            }
+        }
+    }
+
+    private fun collectFlow() {
+        lifecycleScope.launchWhenStarted {
+            repository.getCharacterList().collect {
+                Log.d("It worked", it)
             }
         }
     }
