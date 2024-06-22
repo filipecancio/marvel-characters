@@ -69,9 +69,18 @@ android {
 
 dependencies {
 
+    //Paging
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.common)
+    implementation(libs.paging.rxjava2)
+    implementation(libs.paging.rxjava3)
+    implementation(libs.paging.guava)
+    implementation(libs.paging.compose)
+
     //Dagger Hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     //Retrofit and OkHttp
     implementation(libs.retrofit.retrofit)
