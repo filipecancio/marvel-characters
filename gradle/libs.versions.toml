@@ -1,6 +1,7 @@
 [versions]
 agp = "8.4.1"
 hiltAndroid = "2.49"
+hiltNavigationCompose = "1.2.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.14-SNAPSHOT"
@@ -11,8 +12,17 @@ activityCompose = "1.8.0"
 composeBom = "2023.08.00"
 retrofitVersion = "2.9.0"
 okhttp3Version = "4.2.0"
+pagingVersion = "3.3.0"
 
 [libraries]
+androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "pagingVersion" }
+paging-common = { group = "androidx.paging", name = "paging-common", version.ref = "pagingVersion" }
+paging-rxjava2 = { group = "androidx.paging", name = "paging-rxjava2", version.ref = "pagingVersion" }
+paging-rxjava3 = { group = "androidx.paging", name = "paging-rxjava3", version.ref = "pagingVersion" }
+paging-guava = { group = "androidx.paging", name = "paging-guava", version.ref = "pagingVersion" }
+paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "pagingVersion" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroid" }
