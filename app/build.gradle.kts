@@ -10,6 +10,8 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     alias(libs.plugins.dagger.hilt)
+    alias(libs.plugins.google.services)
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -68,6 +70,11 @@ android {
 }
 
 dependencies {
+
+    //Crashlytics
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics.ktx)
+    implementation(libs.firebase.analytics.ktx)
 
     //Paging
     implementation(libs.paging.runtime)
