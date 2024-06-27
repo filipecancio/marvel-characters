@@ -21,7 +21,8 @@ fun ImageWeb(
     url: String,
     modifier: Modifier = defaultModifier,
     colorFilter: ColorFilter? = null,
-    contentScale: ContentScale= ContentScale.Crop
+    contentScale: ContentScale= ContentScale.Crop,
+    loadingComposable: @Composable () -> Unit = { CircularProgressIndicator() },
 ) {
     Box{
         SubcomposeAsyncImage(
@@ -35,7 +36,7 @@ fun ImageWeb(
             Log.d("ImageWeb", "url: $url")
             Log.d("ImageWeb", "ImageWeb: $state")
             if (state is AsyncImagePainter.State.Loading || state is AsyncImagePainter.State.Error) {
-                CircularProgressIndicator()
+                loadingComposable()
             } else {
                 SubcomposeAsyncImageContent()
             }
