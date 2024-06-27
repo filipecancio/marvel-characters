@@ -7,19 +7,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Icon
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.cancio.marvel_characters.presentation.ui.components.atom.CharacterThumb
 import dev.cancio.marvel_characters.presentation.ui.components.atom.CharacterThumbState
@@ -28,31 +25,22 @@ import dev.cancio.marvel_characters.presentation.ui.components.atom.ImageWeb
 import dev.cancio.marvel_characters.presentation.ui.components.atom.TextBox
 import dev.cancio.marvel_characters.presentation.ui.icons.Marvel
 
-@Preview
 @Composable
-fun ComicItemPreview() {
-    ComicItem(
-        urlComic = "https://i.annihil.us/u/prod/marvel/i/mg/9/00/4bb4c3523c46f.jpg",
-        urlCharacter = "https://i.annihil.us/u/prod/marvel/i/mg/9/00/4bb4c3523c46f.jpg"
-    )
-}
-
-@Composable
-fun ComicItem(
+fun CharacterItem(
     urlComic: String,
     urlCharacter: String,
     label: String = "Loading..."
-) = Box{
+) = Box {
     Column {
-        Box {
+        Box(Modifier.width(130.dp)) {
             ImageWeb(
                 url = urlComic,
                 modifier = Modifier
                     .padding(8.dp)
                     .width(100.dp)
-                    .height(153.dp)
+                    .height(100.dp)
                     .border(1.dp, Color.Black)
-                    .clip(RoundedCornerShape(1.dp)),
+                    .clip(RoundedCornerShape(3.dp)),
                 loadingComposable = {
                     Box(modifier = Modifier
                         .width(100.dp)
