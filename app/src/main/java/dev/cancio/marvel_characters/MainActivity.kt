@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.cancio.marvel_characters.presentation.screen.comicfeed.ComicFeedScreen
 import dev.cancio.marvel_characters.presentation.screen.comicfeed.ComicFeedViewModel
 import dev.cancio.marvel_characters.repository.MarvelRepository
-import dev.cancio.marvel_characters.ui.theme.MarvelcharactersTheme
+import dev.cancio.marvel_characters.presentation.ui.theme.MarvelcharactersTheme
 import javax.inject.Inject
 
 @AndroidEntryPoint
