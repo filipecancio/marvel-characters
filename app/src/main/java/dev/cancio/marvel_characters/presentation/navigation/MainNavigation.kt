@@ -1,4 +1,4 @@
-package dev.cancio.marvel_characters.navigation
+package dev.cancio.marvel_characters.presentation.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.runtime.Composable

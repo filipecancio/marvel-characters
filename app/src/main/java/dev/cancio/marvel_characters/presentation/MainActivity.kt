@@ -1,4 +1,4 @@
-package dev.cancio.marvel_characters
+package dev.cancio.marvel_characters.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
