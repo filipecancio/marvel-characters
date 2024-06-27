@@ -1,4 +1,4 @@
-package dev.cancio.marvel_characters.ui.components.atom
+package dev.cancio.marvel_characters.presentation.ui.components.atom
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -14,9 +14,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.cancio.marvel_characters.ui.theme.Black
-import dev.cancio.marvel_characters.ui.theme.MarvelFontFamily
-import dev.cancio.marvel_characters.ui.theme.White
+import dev.cancio.marvel_characters.presentation.ui.theme.Black
+import dev.cancio.marvel_characters.presentation.ui.theme.MarvelFontFamily
+import dev.cancio.marvel_characters.presentation.ui.theme.White
 
 @Composable
 fun TextBox(

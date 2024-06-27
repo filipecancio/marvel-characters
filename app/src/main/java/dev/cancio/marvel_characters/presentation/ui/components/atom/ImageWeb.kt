@@ -1,4 +1,4 @@
-package dev.cancio.marvel_characters.ui.components.atom
+package dev.cancio.marvel_characters.presentation.ui.components.atom
 
 import android.util.Log
 import androidx.compose.foundation.layout.Box

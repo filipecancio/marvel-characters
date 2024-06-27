@@ -1,4 +1,4 @@
-package dev.cancio.marvel_characters.ui.components.atom
+package dev.cancio.marvel_characters.presentation.ui.components.atom
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import dev.cancio.marvel_characters.ui.icons.Groot
+import dev.cancio.marvel_characters.presentation.ui.icons.Groot
 
 @Preview
 @Composable

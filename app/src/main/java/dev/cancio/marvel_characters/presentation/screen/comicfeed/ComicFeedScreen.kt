@@ -11,9 +11,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
-import dev.cancio.marvel_characters.ui.components.atom.CharacterThumb
-import dev.cancio.marvel_characters.ui.components.atom.ImageWeb
-import dev.cancio.marvel_characters.ui.components.molecule.ComicItem
+import dev.cancio.marvel_characters.presentation.ui.components.atom.CharacterThumb
+import dev.cancio.marvel_characters.presentation.ui.components.atom.ImageWeb
+import dev.cancio.marvel_characters.presentation.ui.components.molecule.ComicItem
 
 
 @Composable

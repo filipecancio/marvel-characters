@@ -1,4 +1,4 @@
-package dev.cancio.marvel_characters.ui.icons
+package dev.cancio.marvel_characters.presentation.ui.icons
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size

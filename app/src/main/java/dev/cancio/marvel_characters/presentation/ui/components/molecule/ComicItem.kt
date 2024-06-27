@@ -1,4 +1,4 @@
-package dev.cancio.marvel_characters.ui.components.molecule
+package dev.cancio.marvel_characters.presentation.ui.components.molecule
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -21,12 +21,12 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.cancio.marvel_characters.ui.components.atom.CharacterThumb
-import dev.cancio.marvel_characters.ui.components.atom.CharacterThumbState
-import dev.cancio.marvel_characters.ui.components.atom.HeartButton
-import dev.cancio.marvel_characters.ui.components.atom.ImageWeb
-import dev.cancio.marvel_characters.ui.components.atom.TextBox
-import dev.cancio.marvel_characters.ui.icons.Marvel
+import dev.cancio.marvel_characters.presentation.ui.components.atom.CharacterThumb
+import dev.cancio.marvel_characters.presentation.ui.components.atom.CharacterThumbState
+import dev.cancio.marvel_characters.presentation.ui.components.atom.HeartButton
+import dev.cancio.marvel_characters.presentation.ui.components.atom.ImageWeb
+import dev.cancio.marvel_characters.presentation.ui.components.atom.TextBox
+import dev.cancio.marvel_characters.presentation.ui.icons.Marvel
 
 @Preview
 @Composable
@@ -78,14 +78,14 @@ fun ComicItem(
             Box(modifier = Modifier
                 .align(Alignment.TopEnd)
                 .offset(y = 22.dp)
-                .rotate(-15f)){CharacterThumb(url = urlCharacter)}
+                .rotate(-15f)){ CharacterThumb(url = urlCharacter) }
             Box(modifier = Modifier
                 .align(Alignment.TopEnd)
-                .offset(y = 51.dp)){CharacterThumb(url = urlCharacter, CharacterThumbState.Medium)}
+                .offset(y = 51.dp)){ CharacterThumb(url = urlCharacter, CharacterThumbState.Medium) }
             Box(modifier = Modifier
                 .align(Alignment.TopEnd)
                 .offset(y = 80.dp)
-                .rotate(-15f)){CharacterThumb(url = urlCharacter, CharacterThumbState.Small)}
+                .rotate(-15f)){ CharacterThumb(url = urlCharacter, CharacterThumbState.Small) }
         }
         TextBox(text = label, maxWidth = 120.dp)
     }
