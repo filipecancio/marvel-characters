@@ -30,14 +30,18 @@ fun MainNavigation(navController: NavHostController) {
     }
 }
 
-sealed class BottoNavItems(
+sealed class BottomNavItem(
     val route: String,
     val icon: ImageVector,
     val title: String
 ) {
-    data object Home : BottoNavItems("ComicFeed", Icons.Comic, "Comics")
-    data object Character : BottoNavItems("CharacterFeed", Icons.Groot, "Characters")
-    data object Favorite : BottoNavItems("FavoriteFeed", Icons.Heart, "Liked")
+    data object Home : BottomNavItem("ComicFeed", Icons.Comic, "Comics")
+    data object Character : BottomNavItem("CharacterFeed", Icons.Groot, "Characters")
+    data object Favorite : BottomNavItem("FavoriteFeed", Icons.Heart, "Liked")
 
-    fun getMainRoutes() = listOf(Home, Character, Favorite)
+
+
+    companion object {
+        fun getMainItemList() = listOf(Home, Character, Favorite)
+    }
 }
