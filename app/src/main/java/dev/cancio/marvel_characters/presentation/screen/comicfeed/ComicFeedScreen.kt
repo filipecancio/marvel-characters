@@ -41,6 +41,7 @@ fun ComicFeedScreen(
                 ComicItem(
                     urlComic = comic.thumbnail.url,
                     urlCharacter = comic.thumbnail.url,
+                    label = comic.title
                 )
             }
         }

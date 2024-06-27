@@ -25,6 +25,7 @@ import dev.cancio.marvel_characters.ui.components.atom.CharacterThumb
 import dev.cancio.marvel_characters.ui.components.atom.CharacterThumbState
 import dev.cancio.marvel_characters.ui.components.atom.HeartButton
 import dev.cancio.marvel_characters.ui.components.atom.ImageWeb
+import dev.cancio.marvel_characters.ui.components.atom.TextBox
 import dev.cancio.marvel_characters.ui.icons.Marvel
 
 @Preview
@@ -39,7 +40,8 @@ fun ComicItemPreview() {
 @Composable
 fun ComicItem(
     urlComic: String,
-    urlCharacter: String
+    urlCharacter: String,
+    label: String = "Loading..."
 ) = Box{
     Column {
         Box {
@@ -85,6 +87,6 @@ fun ComicItem(
                 .offset(y = 80.dp)
                 .rotate(-15f)){CharacterThumb(url = urlCharacter, CharacterThumbState.Small)}
         }
-        Text(text = "Secret Wars bigger title example")
+        TextBox(text = label, maxWidth = 120.dp)
     }
 }

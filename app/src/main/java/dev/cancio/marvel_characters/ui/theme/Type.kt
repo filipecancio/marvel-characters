@@ -2,18 +2,25 @@ package dev.cancio.marvel_characters.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import dev.cancio.marvel_characters.R
 
-// Set of Material typography styles to start with
+val MarvelFontFamily = FontFamily(
+    Font(resId = R.font.marvel_regular),
+    Font(resId = R.font.marvel_bold, weight = FontWeight.Bold),
+    Font(resId = R.font.marvel_bold_italic, style = FontStyle.Italic, weight = FontWeight.Bold),
+    Font(resId = R.font.marvel_italic, style = FontStyle.Italic),
+)
+
 val Typography = Typography(
     bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = MarvelFontFamily,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
     )
     /* Other default text styles to override
     titleLarge = TextStyle(
