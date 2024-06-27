@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
+import dev.cancio.marvel_characters.ui.components.atom.ImageWeb
 
 
 @Composable
@@ -33,7 +34,9 @@ fun ComicFeedScreen(
 
         items(count = comicList.itemCount) { index ->
             comicList[index]?.let { comic ->
-                Text(text = comic.title)
+                //Text(text = comic.title)
+                //comic.thumbnail?.let { Text(text = it.toString()) }
+                ImageWeb(url = comic.thumbnail.url)
             }
         }
     }

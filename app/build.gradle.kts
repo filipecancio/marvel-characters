@@ -71,6 +71,10 @@ android {
 
 dependencies {
 
+    //coil
+    implementation(libs.coil)
+    implementation(libs.coil.compose)
+
     //Crashlytics
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.crashlytics.ktx)
