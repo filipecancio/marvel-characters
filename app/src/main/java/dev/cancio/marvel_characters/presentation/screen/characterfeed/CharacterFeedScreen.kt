@@ -1,4 +1,4 @@
-package dev.cancio.marvel_characters.presentation.screen.comicfeed
+package dev.cancio.marvel_characters.presentation.screen.characterfeed
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -14,31 +14,30 @@ import androidx.compose.ui.unit.sp
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import dev.cancio.marvel_characters.presentation.ui.components.atom.TextBox
-import dev.cancio.marvel_characters.presentation.ui.components.molecule.ComicItem
 import dev.cancio.marvel_characters.presentation.ui.theme.White
 
-
 @Composable
-fun ComicFeedScreen(
-    viewModel: ComicFeedViewModel
+fun CharacterFeedScreen(
+    viewModel: CharacterFeedViewModel
 ) {
     val scope = rememberCoroutineScope()
-    val comicList = viewModel.getComicPaging(scope).collectAsLazyPagingItems()
+    val characterList = viewModel.getCharactercPaging(scope).collectAsLazyPagingItems()
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 8.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
         modifier = Modifier.fillMaxSize()
     )
     {
+
         item {
             Text(
-                text = "All Comics",
+                text = "All Characters",
                 fontSize = 30.sp,
                 color = White
             )
         }
 
-        if (comicList.loadState.refresh == LoadState.Loading) {
+        if (characterList.loadState.refresh == LoadState.Loading) {
             item {
                 Box(modifier = Modifier.fillMaxSize()) {
                     TextBox("Loading...")
@@ -46,15 +45,9 @@ fun ComicFeedScreen(
             }
         }
 
-        items(count = comicList.itemCount) { index ->
-            comicList[index]?.let { comic ->
-                //Text(text = comic.title)
-                //comic.thumbnail?.let { Text(text = it.toString()) }
-                ComicItem(
-                    urlComic = comic.thumbnail.url,
-                    urlCharacter = comic.thumbnail.url,
-                    label = comic.title
-                )
+        items(count = characterList.itemCount) { index ->
+            characterList[index]?.let { character ->
+                Text(text = character.name)
             }
         }
     }
