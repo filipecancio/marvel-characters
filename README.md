@@ -7,7 +7,7 @@
 - versão recente kotlin
 - java na versão 1.8
 - celular ou emulador
-- 
+
 ## Como rodar
 
 🇧🇷 Primeiramente você precisa definir as variáveis locais para o projeto rodar. Você pode seguir os passos em nossa wiki [Definindo Variáveis Locais](https://github.com/filipecancio/marvel-characters/wiki/Setting-Local-Variables).
