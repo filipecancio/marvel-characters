@@ -8,6 +8,7 @@ localProperties.load(FileInputStream(localPropertiesFile))
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.compose.compiler)
     id("kotlin-kapt")
     alias(libs.plugins.dagger.hilt)
     alias(libs.plugins.google.services)
