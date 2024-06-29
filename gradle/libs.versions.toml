@@ -32,6 +32,7 @@ paging-rxjava2 = { group = "androidx.paging", name = "paging-rxjava2", version.r
 paging-rxjava3 = { group = "androidx.paging", name = "paging-rxjava3", version.ref = "pagingVersion" }
 paging-guava = { group = "androidx.paging", name = "paging-guava", version.ref = "pagingVersion" }
 paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "pagingVersion" }
+paging-test = { group = "androidx.paging", name = "paging-testing", version.ref = "pagingVersion" }
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }

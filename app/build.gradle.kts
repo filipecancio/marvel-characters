@@ -88,6 +88,7 @@ dependencies {
     implementation(libs.paging.rxjava3)
     implementation(libs.paging.guava)
     implementation(libs.paging.compose)
+    implementation(libs.paging.test)
 
     //Dagger Hilt
     implementation(libs.hilt.android)
