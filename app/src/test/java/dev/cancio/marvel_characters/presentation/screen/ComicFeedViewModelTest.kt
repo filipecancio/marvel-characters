@@ -1,26 +1,57 @@
 package dev.cancio.marvel_characters.presentation.screen
 
-import androidx.paging.PagingData
-import dev.cancio.marvel_characters.domain.Comic
+import androidx.paging.testing.asSnapshot
 import dev.cancio.marvel_characters.presentation.screen.comicfeed.ComicFeedViewModel
-import kotlinx.coroutines.flow.Flow
+import dev.cancio.marvel_characters.repository.MarvelRepository
+import dev.cancio.marvel_characters.stubs.FakeMarvelRepository
+import dev.cancio.marvel_characters.stubs.comicList
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runTest
+import kotlinx.coroutines.test.setMain
+import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
-import javax.inject.Inject
+import org.junit.runner.RunWith
+import org.mockito.junit.MockitoJUnitRunner
 
+@RunWith(MockitoJUnitRunner::class)
+@OptIn(ExperimentalCoroutinesApi::class)
 class ComicFeedViewModelTest {
 
-    @Inject
+    lateinit var repository: MarvelRepository
+
     lateinit var viewModel: ComicFeedViewModel
 
+    private val testScope = TestScope()
+    private val testDispatcher = StandardTestDispatcher(testScope.testScheduler)
+
+    @Before
+    fun setUp() {
+        Dispatchers.setMain(testDispatcher)
+        repository = FakeMarvelRepository()
+        viewModel = ComicFeedViewModel(repository)
+    }
+
+    @After
+    fun tearDown() {
+        Dispatchers.resetMain()
+    }
+
     @Test
-    fun `WHEN on init viewmodel AND has data  THEN show a comic list state`() {
+    fun `WHEN on init viewmodel AND has data  THEN show a comic list state`() = testScope.runTest {
         //Setup
+        val listResult = viewModel.comicList
 
         //Execution
+        val result = listResult.asSnapshot()
 
         //Assertion
-        assertEquals(4, 2 + 2)
+        assertEquals(result, comicList)
     }
 
     @Test

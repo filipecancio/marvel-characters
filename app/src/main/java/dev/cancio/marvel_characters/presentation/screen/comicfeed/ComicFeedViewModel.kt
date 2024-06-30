@@ -8,14 +8,15 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.cancio.marvel_characters.domain.Comic
 import dev.cancio.marvel_characters.repository.MarvelRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class ComicFeedViewModel @Inject constructor(
-    repository: MarvelRepository
+    private val repository: MarvelRepository
 ) : ViewModel() {
 
-    val comicList: Flow<PagingData<Comic>> =
+    val comicList: Flow<PagingData<Comic>> by lazy {
         repository.getComicPagination().cachedIn(viewModelScope)
-
+    }
 }

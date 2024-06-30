@@ -1,6 +1,7 @@
 [versions]
 agp = "8.4.2"
 coilCompose = "2.6.0"
+coreTesting = "2.2.0"
 firebaseBom = "33.1.1"
 firebaseCrashlyticsGradle = "3.0.2"
 hiltAndroid = "2.49"
@@ -16,13 +17,16 @@ activityCompose = "1.9.0"
 composeBom = "2024.06.00"
 mockitoCore = "3.11.2"
 mockitoKotlin = "3.2.0"
+pagingCommonKtx = "3.3.0"
 retrofitVersion = "2.9.0"
 okhttp3Version = "4.9.0"
 pagingVersion = "3.3.0"
 googleServices = "4.4.2"
 
 [libraries]
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+androidx-paging-common-ktx = { module = "androidx.paging:paging-common-ktx", version.ref = "pagingCommonKtx" }
 coil = { module = "io.coil-kt:coil", version.ref = "coilCompose" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
