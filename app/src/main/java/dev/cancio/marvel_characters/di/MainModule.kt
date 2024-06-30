@@ -6,6 +6,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import dev.cancio.marvel_characters.BuildConfig
 import dev.cancio.marvel_characters.repository.MarvelRepository
+import dev.cancio.marvel_characters.repository.MarvelRepositoryImpl
 import dev.cancio.marvel_characters.service.MarvelApi
 import dev.cancio.marvel_characters.service.MarvelService
 import okhttp3.Interceptor
@@ -70,5 +71,5 @@ class MainModule {
     fun providesMarvelApi(marvelService: MarvelService) = MarvelApi(marvelService)
 
     @Provides
-    fun providesRepository(marvelApi: MarvelApi) = MarvelRepository(marvelApi)
+    fun providesRepository(marvelApi: MarvelApi): MarvelRepository = MarvelRepositoryImpl(marvelApi)
 }
