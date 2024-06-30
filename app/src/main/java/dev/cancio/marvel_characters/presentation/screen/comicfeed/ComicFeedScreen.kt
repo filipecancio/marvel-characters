@@ -22,8 +22,7 @@ import dev.cancio.marvel_characters.presentation.ui.theme.White
 fun ComicFeedScreen(
     viewModel: ComicFeedViewModel
 ) {
-    val scope = rememberCoroutineScope()
-    val comicList = viewModel.getComicPaging(scope).collectAsLazyPagingItems()
+    val comicList = viewModel.comicList.collectAsLazyPagingItems()
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 8.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
